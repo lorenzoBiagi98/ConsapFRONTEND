@@ -1,0 +1,44 @@
+
+<h1>{{rich.stato.idCommessa}}</h1>
+<table class="full-width-table">
+  <thead>
+    <tr>
+      <th>Id Commessa</th>
+      <th>Stato</th>
+      <th>Data di creazione</th>
+      <th>Oggetto</th>
+      <th>Stato Approvazione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input matInput [(ngModel)]="rich.idCommessa" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.stato.id" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.dataCreazione" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.oggetto" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="statoIdApprovazione" [disabled]="true"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="full-width-table">
+  <thead>
+    <tr>
+      <th>Note</th>
+      <th>Campo1</th>
+      <th>Campo2</th>
+      <th>Campo3</th>
+      <th>Campo4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input matInput [(ngModel)]="rich.note" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.campo1" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.campo2" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.campo3" [disabled]="true"></td>
+      <td><input matInput [(ngModel)]="rich.campo4" [disabled]="true"></td>
+    </tr>
+  </tbody>
+</table>
+<button mat-raised-button style="right: 20px; bottom: 10px; position: fixed;" (click)="tornaIndietro()">Indietro</button>

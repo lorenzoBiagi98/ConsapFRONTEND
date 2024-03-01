@@ -1,0 +1,92 @@
+<router-outlet></router-outlet>
+<form [formGroup]="myForm">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <h1 style="text-align: center; top: 20;">Numero Commessa: {{ myForm.get('idCommessa')?.value }}</h1>
+  <table class="full-width-table">
+    <thead>
+      <tr>
+        <th>Id Commessa</th>
+        <th>Stato</th>
+        <th>Data di creazione</th>
+        <th>Oggetto</th>
+        <th>Stato Approvazione</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input matInput formControlName="idCommessa"></td>
+        <td><input matInput formControlName="stato"></td>
+        <td><input matInput formControlName="dataCreazione"></td>
+        <td><input matInput formControlName="oggetto"></td>
+        <td><input matInput formControlName="statoApprovazione"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="full-width-table">
+    <thead>
+      <tr>
+        <th>Note</th>
+        <th>Campo1</th>
+        <th>Campo2</th>
+        <th>Campo3</th>
+        <th>Campo4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input matInput formControlName="note"></td>
+        <td><input matInput formControlName="campo1"></td>
+        <td><input matInput formControlName="campo2"></td>
+        <td><input matInput formControlName="campo3"></td>
+        <td><input matInput formControlName="campo4"></td>
+      </tr>
+    </tbody>
+  </table>
+<div class="divClass">
+  <table class="table2">
+    <thead>
+    <tr>
+      <td>Stato</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1: Open | 2: Assigned | 3: OTE CONSEGNATO | 4: APPR. CODIFICA E TEST</td>
+      </tr>
+    </tbody>
+  
+  </table>
+  <table class="table2">
+    <thead>
+    <tr>
+        <td>Stato Approvazione</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>APPROVED | PENDING APPROVAL</td>
+      </tr>
+    </tbody>
+          
+  </table>
+</div>
+  <button mat-raised-button style="right: 220px; bottom: 10px; position: fixed;" (click)="putRichiesta()">Modifica</button>
+  <button mat-raised-button style="right: 120px; bottom: 10px; position: fixed;" (click)="annullaModifiche()">Refresh</button>
+  <button mat-raised-button style="right: 20px; bottom: 10px; position: fixed;" (click)="tornaIndietro()">Indietro</button>
+
+  <footer>
+    <p style="position:absolute;left: 0;bottom: 0;">Tutti i diritti riservati</p>
+  </footer>
+</form>
+
+
+

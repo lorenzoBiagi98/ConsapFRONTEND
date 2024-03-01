@@ -1,0 +1,76 @@
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .full-width-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+  
+  .full-width-table th, .full-width-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    overflow-x: auto;
+  }
+  
+  .full-width-table th {
+    background-color: #f2f2f2;
+    overflow-x: auto;
+  }
+  .mat-menu-panel {
+    display: block !important;
+  }
+  .pagination{
+    padding: 20px 16px;
+    position: fixed;
+    bottom: 25px;
+    left: 210px;
+  }
+  .pagination::ng-deep .ngx-pagination .current{
+    background-color: gainsboro;
+  }
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  
+  
+  
+  
+    

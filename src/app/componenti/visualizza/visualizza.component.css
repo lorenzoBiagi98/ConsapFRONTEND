@@ -1,0 +1,53 @@
+
+.full-width-table {
+  display: block;
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.full-width-table th, .full-width-table td {
+  border: 3px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.full-width-table th {
+  background-color: #f2f2f2;
+  overflow-x: auto;
+  margin: 0 auto;
+}
+
+.table2{
+  margin-top: 20px;
+  display: flex;
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.table2 th, .table2 {
+  border: 3px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.table2 th {
+  background-color: #f2f2f2;
+  overflow-x: auto;
+  margin: 0 auto;
+}
+.divClass{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+  
