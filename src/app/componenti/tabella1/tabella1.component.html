@@ -41,7 +41,11 @@
                 type="submit" (click)="redirect1(richiesta)"
                 >Visualizza</mat-radio-button
               >
+              <button mat-icon-button (click)="onDelete(richiesta.id)">
+              <mat-icon>delete</mat-icon>
+              </button>
             </mat-radio-group>
+            
           </section>
         </th>
         <td></td>

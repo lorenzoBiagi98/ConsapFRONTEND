@@ -1,5 +1,9 @@
 <router-outlet></router-outlet>
+<html>
+    <head>
     <title>Login Page</title>
+    </head>
+<body>
         <div class="header-container">
             <div class="login-container">
                 <h1>CONSAP</h1>
@@ -19,10 +23,10 @@
             <h2>Login</h2>
             <form id="loginForm">
                 <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username"><br>
+                <input type="text" id="username" name="username" [(ngModel)]="username"><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password"><br>
-                <input type="submit" value="Login">
+                <input type="password" id="password" name="password" [(ngModel)]="password"><br>
+                <input type="submit" (click)="onSubmit()" value="Login">
             </form>
         </div>
         <div id="loadingBar"></div>
@@ -32,3 +36,5 @@
     <footer class="footer-login">
         <p>© 2024 Consap. Tutti i diritti riservati.</p>
       </footer>
+    </body>
+</html>

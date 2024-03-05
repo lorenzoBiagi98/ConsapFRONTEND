@@ -4,10 +4,11 @@ import { Tabella1Component } from './componenti/tabella1/tabella1.component';
 import { VisualizzaComponent } from './componenti/visualizza/visualizza.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { VisualizzaSoloComponent } from './componenti/visualizza-solo/visualizza-solo.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'tabella1', component: Tabella1Component },
+  { path: 'tabella1', component: Tabella1Component, canActivate: [authGuard] },
   { path: 'visualizza', component: VisualizzaComponent },
   { path: 'visualizzaSolo', component: VisualizzaSoloComponent },
 ];

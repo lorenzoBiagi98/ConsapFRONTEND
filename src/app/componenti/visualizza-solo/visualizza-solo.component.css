@@ -69,6 +69,10 @@
   .example-margin {
     margin: 0 10px;
   }
+
+  .span{
+    flex: 1 1 auto;
+  }
   
   
   
