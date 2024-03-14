@@ -1,0 +1,191 @@
+<title>AdminLTE 3 | DataTables</title>
+
+<div class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Richieste</h1>
+          </div>
+          <div class="col-sm-6 text-right mt-2">
+            <div>
+              <button type="submit" class="btn btn-dark" routerLink="inserisci" (click)="inviaRichieste()">Nuova Richiesta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <ng-container *ngIf="showToast1">
+      <div id="toast-container"  class="toast-top-right">
+        <div class="toast toast-success" aria-live="polite">
+          <div class="toast-message">Record eliminato correttamente</div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Ticket</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="numeroTicket">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of richieste" [value]="rich.richiestaNumeroTicket">
+                          {{ rich.richiestaNumeroTicket }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Applicativo</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="applicativoId" >
+                        <option selected="selected"></option>
+                        <option *ngFor="let app of applicativi" [value]="app.applicativoId" >
+                          {{ app.applicativoDescrizione }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Oggetto</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="oggettoDesc">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of richieste" [value]="rich.richiestaOggetto">
+                          {{ rich.richiestaOggetto }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Stato Richiesta CONSAP</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="richCONSAP">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of richiesteCONSAP" [value]="rich.statoRichiestaCONSAPId">
+                          {{ rich.statoRichiestaCONSAPDescrizione }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Stato Approvazione CONSAP</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="appCONSAP">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of approvazioneCONSAP" [value]="rich.statoApprovazioneCONSAPId">
+                          {{ rich.statoApprovazioneCONSAPDescrizione }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Stato Richiesta OS</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="richOS">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of richiesteOS" [value]="rich.statoRichiestaOSId">
+                          {{ rich.statoRichiestaOSDescrizione }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Stato Approvazione OS</label>
+                      <select class="form-control select2" style="width: 100%" [(ngModel)]="appOS">
+                        <option selected="selected"></option>
+                        <option *ngFor="let rich of approvazioniOS" [value]="rich.statoApprovazioneOSId">
+                          {{ rich.statoApprovazioneOSDescrizione}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="bottone">Cerca</label>
+                    <button id="bottone" type="button" class="btn btn-secondary form-control"></button>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Ticket</th>
+                      <th>Applicativo</th>
+                      <th>Oggetto</th>
+                      <th>Importo</th>
+                      <th>Commessa</th>
+                      <th>Data di Creazione</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let rich of richieste">
+                      <td>{{ rich.richiestaNumeroTicket }}</td>
+                      <td>{{ rich.applicativo.applicativoDescrizione }}</td>
+                      <td>{{ rich.richiestaOggetto }}</td>
+                      <td>{{ rich.importo }}</td>
+                      <td>{{ rich.commessaOS.commessaOSCodiceCommessa }}</td>
+                      <td>{{ rich.richiestaDataCreazione }}</td>
+                      <td (click)="redirect(rich)" routerLink="visualizza">
+                        <i class="fa fa-eye"></i>
+                      </td>
+                      <td (click)="redirect1(rich)"><i class="fa fa-pen"></i></td>
+                      <td data-toggle= "modal" data-target="#modal-default" (click)="getIdToDelete(rich.richiestaId)"><i class="fa fa-trash"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="modal fade" id="modal-default">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Conferma eliminazione</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Eliminare la richiesta con ID: {{idDelete}}&hellip;</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="showToast();deleteRichiesta(idDelete)">Conferma</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+            </div>
+ 
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <aside class="control-sidebar control-sidebar-dark">
+
+    </aside>
+
+  </div>
+
+</div>
