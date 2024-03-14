@@ -27,7 +27,7 @@ import { approvazioneOS } from '../../modelli/approvazioneOS';
 })
 export class TabellaRichiesteGetAllComponent implements OnInit {
   public richieste: richiesta[] = [];
-  public richiesteFiltro: richiesta[] = [];
+  public richiesteFiltro: richiesta[] = []; //
   public applicativi: applicativo[] = [];
   public commesse: commessa[] = [];
   public richiesteCONSAP: richiestaCONSAP[] = [];
